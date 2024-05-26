@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: hsl(0, 0%, 85%);
+    /* 색상, 채도, 밝기 */
+
+    /* --secondary-color: hsl(339, 77%, 59%); */
+    /* --third-color: hsl(160, 100%, 35%); */
+
+    --body-color: hsl(0, 0%, 13%);
+
+    /* font */
+    --body-font: 'Noto Sans', sans-serif;
+    --h1-font-size: 2rem;
+    /* 글자 크기 : 중간일 때, 대문자 M의 너비인 16px을 기준으로 함*/
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --small-font-size: 0.8rem;
+    --smaller-font-size: 0.6rem;
+
+    /* z-index */
+    --z-index: 100;
+
+    /* nav */
+    --nav-height: 44px
+}
+
+/* nav */
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+}
+
+body>header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+nav.container {
+    background-color: var(--primary-color);
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(18, 18, 18);
+    font-size: var(--small-font-size);
+}
+
+nav a {
+    color: rgb(31, 31, 31);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        background-color: hsl(0, 0%, 85%);
+        position: absolute;
+        top: calc(var(--nav-height) - 140px);
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .nav-item {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid white;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .show-menu {
+        top: var(--nav-height);
+    }
+}
+
+/* .nav-link {
+    align-items: center;
+} */
