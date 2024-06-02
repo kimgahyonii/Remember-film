@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --primary-color: hsl(0, 0%, 85%);
+    --primary-color: hsla(0, 0%, 14%, 0.98);
     /* 색상, 채도, 밝기 */
 
     /* --secondary-color: hsl(339, 77%, 59%); */
@@ -44,15 +44,18 @@ nav.container {
     height: var(--nav-height);
     display: flex;
     /* justify-content: space-between; */
+    /* 메뉴 가운데 정렬 */
     justify-content: center;
+    /* 메뉴 가운데 정렬 */
     align-items: center;
-    color: rgb(18, 18, 18);
+    color: hsl(0, 0%, 85%, 60%);
     font-size: var(--normar-font-size);
+
     /* padding-left: 600px; */
 }
 
 nav a {
-    color: rgb(31, 31, 31);
+    color: hsl(0, 0%, 85%);
 }
 
 .nav-list {
@@ -70,6 +73,7 @@ nav a {
 
 .nav-toggle {
     display: none;
+    /*list 표시 정렬*/
     position: absolute;
     right: 30px;
 }
@@ -88,6 +92,7 @@ nav a {
         left: 0;
         overflow: hidden;
         z-index: -1;
+        margin-top: 1%;
     }
 
     .nav-item {
