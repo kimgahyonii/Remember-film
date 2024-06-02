@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --primary-color: hsla(0, 0%, 14%, 0.98);
+    --primary-color: hsla(0, 0%, 14%, 0.70);
     /* 색상, 채도, 밝기 */
 
     /* --secondary-color: hsl(339, 77%, 59%); */
     /* --third-color: hsl(0, 0%, 85%); */
 
-    --body-color: hsl(0, 0%, 13%);
+    --body-color: hsla(0, 0%, 14%, 0.98);
 
     /* font */
     --body-font: 'Noto Sans', sans-serif;
@@ -44,43 +44,42 @@ nav.container {
     height: var(--nav-height);
     display: flex;
     /* justify-content: space-between; */
-    /* 메뉴 가운데 정렬 */
-    justify-content: center;
-    /* 메뉴 가운데 정렬 */
+    /* 메뉴 가운데 */
+    /* justify-content: center; */
     align-items: center;
+    padding: 0 40px;
     color: hsl(0, 0%, 85%, 60%);
     font-size: var(--normar-font-size);
-
+    text-align: center;
+    justify-content: center;
+    /* z-index: 10; */
     /* padding-left: 600px; */
 }
 
 nav a {
     color: hsl(0, 0%, 85%);
+
 }
 
 .nav-list {
     display: flex;
-    align-items: center;
-    column-gap: 40px;
-    text-align: center;
-    justify-content: center;
+    /* align-items: center; */
+    column-gap: 50px;
+    /* text-align: center; */
 
-}
-
-.nav-item {
-    display: inline-block;
+    transition: 0.4s ease-in-out;
 }
 
 .nav-toggle {
     display: none;
     /*list 표시 정렬*/
-    position: absolute;
-    right: 30px;
+    /* position: absolute; */
+    /* right: 30px; */
 }
 
 @media screen and (max-width: 600px) {
     .nav-container {
-        padding: 0 20px;
+        padding: 0 20%;
     }
 
     .nav-list {
@@ -89,32 +88,34 @@ nav a {
         position: absolute;
         top: calc(var(--nav-height) - 140px);
         right: 0;
-        left: 0;
+        /* left: 0;/ */
+        /*너비를 50%로 설정해서 오른쪽 반만 차지하도록 함*/
+        width: 50%;
         overflow: hidden;
         z-index: -1;
-        margin-top: 1%;
     }
 
     .nav-item {
-        padding: 0.5rem 0;
+        padding: 0.8rem 0;
         width: 100%;
         text-align: center;
     }
 
     .nav-link {
         display: block;
+        /* color: hsl(0, 0%, 85%); */
+        /* text-decoration: none; */
+        /* padding: 1rem; */
     }
 
     .nav-toggle {
         display: block;
         cursor: pointer;
+        position: absolute;
+        right: 3%;
     }
 
     .show-menu {
         top: var(--nav-height);
     }
 }
-
-/* .nav-link {
-    align-items: center;
-} */

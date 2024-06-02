@@ -5,12 +5,7 @@ const toggleMenu = () => {
 
     navToggleDiv.onclick = () => {
         navListUl.classList.toggle("show-menu");
-
         toggleI.classList.toggle("bi-three-dots-vertical");
-        // toggleI.classList.toggle.add("bi-list");
-        // toggleI.classList.remove("bi-x-lg");
-        // toggleI.classList.remove("bi-x-lg");
-        // toggleI.classList.toggle.add("bi-list");
         toggleI.classList.toggle("bi-x-lg");
     }
 }
