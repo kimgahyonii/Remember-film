@@ -5,7 +5,7 @@
     /* 색상, 채도, 밝기 */
 
     /* --secondary-color: hsl(339, 77%, 59%); */
-    /* --third-color: hsl(160, 100%, 35%); */
+    /* --third-color: hsl(0, 0%, 85%); */
 
     --body-color: hsl(0, 0%, 13%);
 
@@ -15,6 +15,7 @@
     /* 글자 크기 : 중간일 때, 대문자 M의 너비인 16px을 기준으로 함*/
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
+    --normar-font-size: 1rem;
     --small-font-size: 0.8rem;
     --smaller-font-size: 0.6rem;
 
@@ -42,10 +43,12 @@ nav.container {
     background-color: var(--primary-color);
     height: var(--nav-height);
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     align-items: center;
     color: rgb(18, 18, 18);
-    font-size: var(--small-font-size);
+    font-size: var(--normar-font-size);
+    /* padding-left: 600px; */
 }
 
 nav a {
@@ -56,10 +59,19 @@ nav a {
     display: flex;
     align-items: center;
     column-gap: 40px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.nav-item {
+    display: inline-block;
 }
 
 .nav-toggle {
     display: none;
+    position: absolute;
+    right: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -69,7 +81,7 @@ nav a {
 
     .nav-list {
         flex-direction: column;
-        background-color: hsl(0, 0%, 85%);
+        background-color: hsla(0, 0%, 14%, 0.98);
         position: absolute;
         top: calc(var(--nav-height) - 140px);
         right: 0;
@@ -80,7 +92,6 @@ nav a {
 
     .nav-item {
         padding: 0.5rem 0;
-        border-bottom: 1px solid white;
         width: 100%;
         text-align: center;
     }
