@@ -26,14 +26,20 @@
     --nav-height: 44px
 }
 
-/* .toStrorage-container {
+.toStrorage-container {
     height: 836px;
     background: url(/toStorage-image.jpg) no-repeat center center;
-    /* background-size: cover; */
-/* 꽉찬 화면을 반응형으로 기준점을 center로 */
-/* background-position: cover; */
+    background-size: cover;
+    /* 꽉찬 화면을 반응형으로 기준점을 center로 */
+    background-position: cover;
+    /* column-gap: 200px; */
+    /* width: 100%; */
+}
 
+/* br { */
+/* padding: 20px; */
 /* } */
+
 body {
     font-family: var(--body-font);
     /* background-color: var(--body-color); */
@@ -48,10 +54,28 @@ body>header {
 
 
 .toStorage-image {
-    width: 100%;
+    /* width: 100%; */
     /* height: 600px; */
-
+    /* padding-top: 200%; */
     /* background-size: cover; */
+    /* position: left; */
+}
+
+button {
+    /* position: relative; */
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-family: var(--body-font);
+    /* border-color: hsla(0, 0%, 100%, 0.7); */
+    color: hsla(0, 0%, 100%, 0.7);
+    /* backdrop-filter: blur(2px); */
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
+    /* text-decoration: none; */
+    /* color: hsla(0, 0%, 80%, 0.98); */
+    background-color: hsla(0, 0%, 80%, 0.3);
+    /* background-color: none; */
+    font-weight: 600;
+    transition: 0.25s;
 }
 
 /* 버튼 css */
@@ -79,16 +103,13 @@ body>header {
         /* Adjust icon size as needed */
     }
 
-    .image-upload-text {
-        margin-top: 10px;
-        /* Adjust as needed */
-        font-size: 1.5em;
-        /* Adjust text size as needed */
-        text-align: center;
-    }
+    /* .toStorage-text{ */
+    /*  */
+    /* } */
 
     .toStorage-image {
-        width: 900px;
+
+        /* width: 900px; */
         height: 700px;
         overflow: hidden;
     }
@@ -115,7 +136,8 @@ body>header {
 }
 
 .toStorage-image .toStorage-text {
-    /* position: absolute; */
+    position: absolute;
+
     top: 70%;
     left: 10%;
     font-size: var(--h2-font-size);
