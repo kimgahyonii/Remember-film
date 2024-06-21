@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 :root {
-    --primary-color: hsla(0, 0%, 14%, 0.70);
+    --primary-color: hsla(0, 0%, 14%, 0.7);
     /* 색상, 채도, 밝기 */
 
     /* --secondary-color: hsl(339, 77%, 59%); */
@@ -52,6 +55,7 @@ body>header {
 } */
 
 nav.container {
+
     background-color: var(--primary-color);
     height: var(--nav-height);
     display: flex;
@@ -64,6 +68,7 @@ nav.container {
     font-size: var(--small-font-size);
     text-align: center;
     justify-content: center;
+    justify-content: space-between;
     /* z-index: 10; */
     /* padding-left: 600px; */
 }
@@ -77,8 +82,13 @@ nav a {
     display: flex;
     /* align-items: center; */
     column-gap: 50px;
+
     /* text-align: center; */
-    transition: 0.5s ease-in-out;
+    /* transition: 0.5s ease-in-out; */
+}
+
+.nav-list>container {
+    position: fixed;
 }
 
 .nav-toggle,
@@ -89,7 +99,31 @@ nav a {
     /* right: 30px; */
 }
 
+/* .qureytitle {
+    display: none;
+} */
+.qureytitle {
+
+    display: block;
+    font-family: "Oswald", sans-serif;
+    /* font-size: calc(--h2-font-size); */
+
+    font-weight: 200;
+    font-style: normal;
+}
+
 @media screen and (max-width: 600px) {
+    /* .qureytitle {
+        display: block;
+        font-family: "Playwrite NG Modern", cursive;
+        font-optical-sizing: auto;
+    
+    } */
+    /* // <uniquifier>: Use a unique and descriptive class name */
+    /* // <weight>: Use a value from 200 to 700 */
+
+
+
     .nav-container {
         padding: 0 20%;
 
@@ -107,9 +141,14 @@ nav a {
         width: 50%;
         /* overflow: hidden; */
         /* z-index: 100; */
+        transition: 0.3s ease-out;
         z-index: var(--z-index);
-        transition: bottom 3s ease-out;
+        /* margin-top: 2px; */
+
+        backdrop-filter: blur(4px);
     }
+
+
 
     .nav-item {
         padding: 1rem 0;
@@ -134,7 +173,7 @@ nav a {
     }
 
     .show-menu {
-        height: 650px;
+        height: 692px;
         top: var(--nav-height);
     }
 }
