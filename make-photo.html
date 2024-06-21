@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKE PHOTO</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/make-photo.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav container">
+            <ul class="nav-list container">
+                <li class="nav-item"><a href="/index.html" class="nav-link"">HOME</a></li>
+                <li class=" nav-item"><a href="/make-photo.html" class="nav-link"">MAKE PHOTO</a></li>
+                <li class=" nav-item"><a href="/storage.html" class="nav-link">STORAGE</a></li>
+            </ul>
+            <!-- 모바일 : 햄버거(반응형 toggle) -->
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </nav>
+    </header>
+    <main id="film-frame" class="container">
+        <section class="film-frame-container">
+            <article class="film-frame-img remove">
+                <img src="images/FilmFrame_edited_edited.jpg" alt="">
+            </article>
+            <!-- 이미지 업로드 -->
+            <article class="film-frame-img">
+                <img src="images/FilmFrame_edited_edited.jpg" alt="">
+                <div class="image-upload-container">
+                    <i class="bi bi-card-image"></i>
+                    <div class="image-upload-text">image upload</div>
+                </div>
+            </article>
+            <div>
+                <button class="after-button"><i class="bi bi-download">DOWNLOAD</i></button>
+            </div>
+            <article class="film-frame-img">
+                <img src="images/FilmFrame_edited_edited.jpg" alt="">
+                <div class="diary-container">
+                    <div class="diary-title">DAIRY</div>
+                    <div class="diary-input-title">TITLE | </div>
+                    <div class="diary-write-text">WRITE</div>
+                    <div class="input-box"></div>
+                </div>
+            </article>
+            <article class="film-frame-img remove">
+                <img src="images/FilmFrame_edited_edited.jpg" alt="">
+            </article>
+        </section>
+        <section class="button-container">
+            <div class="download-button">
+                <button class="before-button"><i class="bi bi-download"></i>DOWNLOAD</button>
+            </div>
+        </section>
+    </main>
+    <script src="/js/nav.js"></script>
+</body>
+
+</html>

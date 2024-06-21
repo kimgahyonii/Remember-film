@@ -7,7 +7,7 @@
     /* --secondary-color: hsl(339, 77%, 59%); */
     /* --third-color: hsl(0, 0%, 85%); */
 
-    --body-color: hsla(0, 0%, 14%, 0.98);
+    --body-color: hsla(0, 0%, 100%, 0.98);
 
     /* font */
     --body-font: 'Noto Sans', sans-serif;
@@ -39,6 +39,18 @@ body>header {
     left: 0;
 }
 
+/* .logo {
+    background-color: var(--primary-color);
+    height: var(--nav-height);
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+    padding: 0 40px;
+    color: hsl(0, 0%, 85%, 60%);
+    font-size: var(--small-font-size);
+} */
+
 nav.container {
     background-color: var(--primary-color);
     height: var(--nav-height);
@@ -60,16 +72,17 @@ nav a {
     color: hsl(0, 0%, 85%, 70%);
 }
 
+
 .nav-list {
     display: flex;
     /* align-items: center; */
     column-gap: 50px;
     /* text-align: center; */
-
     transition: 0.5s ease-in-out;
 }
 
-.nav-toggle {
+.nav-toggle,
+.logo {
     display: none;
     /*list 표시 정렬*/
     /* position: absolute; */
@@ -79,18 +92,20 @@ nav a {
 @media screen and (max-width: 600px) {
     .nav-container {
         padding: 0 20%;
+
     }
 
     .nav-list {
+
         flex-direction: column;
         background-color: hsla(0, 0%, 14%, 0.7);
         position: absolute;
-        top: calc(var(--nav-height) - 140px);
+        top: calc(var(--nav-height) - 200px);
         right: 0;
         /* left: 0;/ */
         /*너비를 50%로 설정해서 오른쪽 반만 차지하도록 함*/
         width: 50%;
-        overflow: hidden;
+        /* overflow: hidden; */
         /* z-index: 100; */
         z-index: var(--z-index);
         transition: bottom 3s ease-out;
@@ -100,10 +115,12 @@ nav a {
         padding: 1rem 0;
         width: 100%;
         text-align: center;
+
     }
 
     .nav-link {
         display: block;
+
         /* color: hsl(0, 0%, 85%); */
         /* text-decoration: none; */
         /* padding: 1rem; */
@@ -117,6 +134,7 @@ nav a {
     }
 
     .show-menu {
+        height: 650px;
         top: var(--nav-height);
     }
 }

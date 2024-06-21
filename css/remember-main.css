@@ -7,7 +7,7 @@
     /* --secondary-color: hsl(339, 77%, 59%); */
     /* --third-color: hsl(0, 0%, 85%); */
 
-    --body-color: hsla(0, 0%, 14%, 0.98);
+    --body-color: hsla(0, 0%, 100%, 0.98);
 
     /* font */
     --body-font: 'Noto Sans', sans-serif;
@@ -49,21 +49,48 @@ body>header {
 
 .toStorage-image {
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
 
     /* background-size: cover; */
 }
 
-/* img { */
-/* max-width: 100%; */
-/* height: auto; */
-/* } */
+/* 버튼 css */
 
+/* 미디어 쿼리문으로 텍스트 크기 조정(반응형 구현하기) */
 @media (max-width: 600px) {
-    .toStorage-image {
-        max-width: 500px;
+    .image-upload {
+        position: relative;
+    }
+
+    .image-upload-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+    }
+
+    .image-upload-container i {
+        font-size: 2em;
+        /* Adjust icon size as needed */
+    }
+
+    .image-upload-text {
+        margin-top: 10px;
+        /* Adjust as needed */
+        font-size: 1.5em;
+        /* Adjust text size as needed */
+        text-align: center;
+    }
+
+    .toStorage-image {
+        width: 900px;
+        height: 700px;
+        overflow: hidden;
     }
 
     .toStorage-text {
@@ -88,7 +115,7 @@ body>header {
 }
 
 .toStorage-image .toStorage-text {
-    position: absolute;
+    /* position: absolute; */
     top: 70%;
     left: 10%;
     font-size: var(--h2-font-size);

@@ -1,0 +1,217 @@
+/* .film-frame-img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* font */
+    --body-font: 'Noto Sans', sans-serif;
+    --normar-font-size: 1rem;
+    --small-font-size: 0.8rem;
+    --smaller-font-size: 0.6rem;
+
+    /* z-index */
+    --z-index: 100;
+
+    /* nav */
+    --nav-height: 44px
+}
+
+.after-button {
+    display: none;
+}
+
+img {
+    /* margin-top: 6%; */
+    /* height: 30rem; */
+    /* width: 100%; */
+    /* overflow: hidden; */
+}
+
+/*
+.download-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+} */
+#film-frame {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top: calc(var(--nav-height) + 30px);
+    overflow: hidden;
+}
+
+.film-frame-container {
+    width: 400rem;
+    text-align: center;
+    /* width: 100%; */
+    /* padding: 0 100px; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    /* column-gap: 80px; */
+    /* row-gap: 40px; */
+}
+
+.film-frame-img {
+    padding-top: 0%;
+    position: relative;
+    /* Added to position child elements absolutely */
+    /* max-width: 100%; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* display: flex; */
+
+    /* padding-left: 40px; */
+    /* flex: 1 0 200px; */
+}
+
+button {
+    /* position: relative; */
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: var(--body-font);
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
+    /* text-decoration: none; */
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+/* .image-upload-container {
+    z-index: 2;
+} */
+
+/* .image-upload-container i {
+    font-size: 2em;
+} */
+
+.image-upload-text {
+    font-size: var(--normar-font-size);
+    /* Adjust text size as needed */
+    /* position: absolute; */
+    /* font-size: var(--normar-font-size);   */
+    /* 더 이동한 값은 transform으로 보정 */
+    transform: translate(10%, 10%);
+    /* img보다 위에 있어야 하므로 image보다 z-index를 높게 잡아줌 */
+    /* z-index: 2; */
+    /* text-align: left; */
+
+    color: hsl(0, 0%, 14%, 0.70);
+    line-height: 1.5;
+    /* 줄간격을 넓히는 속성 추가 */
+    /* display: inline; */
+}
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* 부모 요소를 기준으로 절대 위치 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 선택사항: 배경색 */
+    z-index: 2;
+    /* 이미지 위에 표시되도록 z-index 설정 */
+}
+
+.image-upload-container i {
+    font-size: 2em;
+    color: #A7A7A7;
+    /* 아이콘 크기 조정 가능 */
+}
+
+/* 텍스트 가운데 맞춤 */
+/* <div class="diary-container">
+<div class="diary-title">DAIRY</div>
+<div class="diary-input-title">TITLE | </div>
+<div class="diary-write-text">write</div>
+<div class="input-box"></div>
+</div> */
+.diary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* 부모 요소를 기준으로 절대 위치 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 선택사항: 배경색 */
+    z-index: 2;
+}
+
+.diary-title {}
+
+/* 반응형 */
+@media screen and(max-width:978px) {
+    #film-frame {
+        margin-top: calc(var(--nav-height) + 60px);
+    }
+
+    .film-frame-container {
+        min-width: 100%;
+    }
+
+    img {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .after-button {
+        display: block;
+    }
+
+    .before-button,
+    .remove {
+        display: none;
+    }
+
+    #film-frame {
+        margin-top: calc(var(--nav-height) + 50px);
+    }
+
+    .film-frame-container {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .film-frame-img {
+        min-width: 100%;
+    }
+
+    img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: spacee-between;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    /* .image-upload-text {
+
+        color: black;
+    }
+
+    .image-upload-container {
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+
+    } */
+}
