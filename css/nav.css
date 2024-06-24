@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap'); */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap');
 
 :root {
     --primary-color: hsla(0, 0%, 14%, 0.7);
@@ -82,7 +84,7 @@ nav a {
     display: flex;
     /* align-items: center; */
     column-gap: 50px;
-
+    /* position: absolute; */
     /* text-align: center; */
     /* transition: 0.5s ease-in-out; */
 }
@@ -102,14 +104,23 @@ nav a {
 /* .qureytitle {
     display: none;
 } */
-.qureytitle {
+/* .qureytitle {
 
     display: block;
     font-family: "Oswald", sans-serif;
-    /* font-size: calc(--h2-font-size); */
+    font-size: 17px;
+    /* padding-left: -20px; */
+/* font-weight: 300;
+    font-style: normal;
+} */
 
+.qureytitle {
+    font-family: "Playwrite NZ", cursive;
+    font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
+    font-size: 15px;
+
 }
 
 @media screen and (max-width: 600px) {

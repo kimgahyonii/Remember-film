@@ -14,6 +14,7 @@
 <body>
     <header>
         <nav class="nav container">
+            <ul class="qureytitle">Remember Film</ul>
             <ul class="nav-list container">
                 <li class="nav-item"><a href="/index.html" class="nav-link"">HOME</a></li>
                 <li class=" nav-item"><a href="/make-photo.html" class="nav-link"">MAKE PHOTO</a></li>
@@ -33,13 +34,15 @@
             <!-- 이미지 업로드 -->
             <article class="film-frame-img">
                 <img src="/FilmFrame_edited_edited.jpg" alt="">
-                <div class="image-upload-container">
+                <!-- <div class="image-upload-container"> -->
+                <input type="file" class="real-upload" accept="image/*" required multiple style="display: none;">
+                <div class="upload">
                     <i class="bi bi-card-image"></i>
                     <div class="image-upload-text">image upload</div>
                 </div>
             </article>
             <div>
-                <button class="after-button"><i class="bi bi-download">DOWNLOAD</i></button>
+                <button class="after-button"><i class="bi bi-download"> DOWNLOAD</i></button>
             </div>
             <article class="film-frame-img">
                 <img src="/FilmFrame_edited_edited.jpg" alt="">
@@ -60,7 +63,7 @@
             </div>
         </section>
     </main>
-    <script src="/js/nav.js"></script>
+    <script src="/js/makephoto.js"></script>
 </body>
 
 </html>

@@ -75,6 +75,7 @@ img {
 
 button {
     /* position: relative; */
+    margin-top: 30px;
     padding: 15px 30px;
     border-radius: 15px;
     font-family: var(--body-font);
@@ -82,6 +83,7 @@ button {
     /* text-decoration: none; */
     font-weight: 600;
     transition: 0.25s;
+
 }
 
 /* .image-upload-container {
@@ -109,7 +111,7 @@ button {
     /* display: inline; */
 }
 
-.image-upload-container {
+.upload {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +127,7 @@ button {
     /* 이미지 위에 표시되도록 z-index 설정 */
 }
 
-.image-upload-container i {
+.upload i {
     font-size: 2em;
     color: #A7A7A7;
     /* 아이콘 크기 조정 가능 */
@@ -172,6 +174,10 @@ button {
 }
 
 @media screen and (max-width:600px) {
+    button {
+        margin-top: 3px;
+    }
+
     .after-button {
         display: block;
     }
@@ -201,6 +207,16 @@ button {
         justify-content: spacee-between;
         max-width: 250px;
         margin: 0 auto;
+    }
+
+    .real-upload {
+        display: none;
+    }
+
+    .upload {
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
     }
 
     /* .image-upload-text {
