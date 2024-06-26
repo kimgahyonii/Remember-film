@@ -8,6 +8,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
 :root {
     /* font */
     --body-font: 'Noto Sans', sans-serif;
@@ -26,6 +28,10 @@
     display: none;
 }
 
+hr {
+    width: 400px;
+}
+
 img {
     /* margin-top: 6%; */
     /* height: 30rem; */
@@ -40,6 +46,14 @@ img {
     justify-content: center;
     margin-top: 3%;
 } */
+.title {
+
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
 #film-frame {
     flex-direction: column;
     display: flex;
@@ -61,6 +75,7 @@ img {
 }
 
 .film-frame-img {
+    margin-top: 20px;
     padding-top: 0%;
     position: relative;
     /* Added to position child elements absolutely */
@@ -140,12 +155,33 @@ button {
 <div class="diary-write-text">write</div>
 <div class="input-box"></div>
 </div> */
+.diary-title {
+    /* margin-left: 180px; */
+    font-size: 20px;
+}
+
+.diary-title,
+.input-box,
+hr {
+    margin-bottom: 10px;
+}
+
+.diary-write-text {
+    margin-bottom: 10px;
+}
+
+.diary-container .diary-input-title {
+    justify-content: left;
+}
+
 .diary-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* margin-left: 50px; */
     position: absolute;
+    column-gap: 20px;
     /* 부모 요소를 기준으로 절대 위치 */
     top: 0;
     left: 0;
@@ -153,9 +189,9 @@ button {
     height: 100%;
     /* 선택사항: 배경색 */
     z-index: 2;
+    font-weight: 200;
 }
 
-.diary-title {}
 
 /* 반응형 */
 @media screen and(max-width:978px) {
@@ -217,6 +253,13 @@ button {
         width: 200px;
         height: 200px;
         background-color: antiquewhite;
+    }
+
+    .input-box {
+        /* height: 10px; */
+        width: 20px;
+        /* align-items: center; */
+        /* justify-content: centers; */
     }
 
     /* .image-upload-text {

@@ -184,7 +184,7 @@ nav a {
     }
 
     .show-menu {
-        height: 692px;
+        height: 685px;
         top: var(--nav-height);
     }
 }

@@ -9,3 +9,4 @@ const toggleMenu = () => {
         toggleI.classList.toggle("bi-x-lg");
     }
 }
+toggleMenu();

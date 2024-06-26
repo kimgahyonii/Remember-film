@@ -27,6 +27,7 @@
         </nav>
     </header>
     <main id="film-frame" class="container">
+        <div class="title">여러분의 추억을 필름 속에 담아보세요.</div>
         <section class="film-frame-container">
             <article class="film-frame-img remove">
                 <img src="/FilmFrame_edited_edited.jpg" alt="">
@@ -35,8 +36,10 @@
             <article class="film-frame-img">
                 <img src="/FilmFrame_edited_edited.jpg" alt="">
                 <!-- <div class="image-upload-container"> -->
-                <input type="file" class="real-upload" accept="image/*" required multiple style="display: none;">
+
+                <div id="imagePreview"></div>
                 <div class="upload">
+                    <input type="file" class="real-upload" accept="image/*" required multiple style="display: none;">
                     <i class="bi bi-card-image"></i>
                     <div class="image-upload-text">image upload</div>
                 </div>
@@ -46,14 +49,22 @@
             </div>
             <article class="film-frame-img">
                 <img src="/FilmFrame_edited_edited.jpg" alt="">
+
                 <div class="diary-container">
                     <div class="diary-title">DAIRY</div>
-                    <div class="diary-input-title">TITLE | </div>
+                    <div class="diary-input-title">TITLE |
+                        <!-- placeholder="I" -->
+                        <input type="text" autofocus style="height: 25px; border: none; outline: none; ">
+                        <hr>
+                    </div>
                     <div class="diary-write-text">WRITE</div>
-                    <div class="input-box"></div>
+                    <div class="input-box">
+                        <input id="file-input" placeholder="일기를 작성해보세요."
+                            style="height: 200px; width: 400px;  border: 1px solid; outline: none;">
+                    </div>
                 </div>
             </article>
-            <article class="film-frame-img remove">
+            <article class=" film-frame-img remove">
                 <img src="/FilmFrame_edited_edited.jpg" alt="">
             </article>
         </section>
@@ -64,6 +75,7 @@
         </section>
     </main>
     <script src="/js/makephoto.js"></script>
+    <script src="/js/nav.js"></script>
 </body>
 
 </html>
