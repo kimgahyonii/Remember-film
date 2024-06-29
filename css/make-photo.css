@@ -409,7 +409,7 @@ button:hover {
 }
 
 .bi {
-    color: #555;
+    /* color: #555; */
 }
 
 @media screen and (max-width:600px) {
