@@ -412,7 +412,9 @@ button:hover {
 }
 
 @media screen and (max-width:600px) {
-
+    .image-upload-text {
+        font-size: 14px;
+    }
 
     .after-button {
         display: flex;
@@ -436,6 +438,7 @@ button:hover {
         /* 아이콘과 텍스트 사이 간격 조정 */
         font-size: 1rem;
         /* 아이콘 크기 조정 */
+
         color: #000;
         /* 아이콘 색상 설정 */
     }
@@ -460,6 +463,8 @@ button:hover {
         font-style: normal;
         font-variation-settings:
             "wdth" 100;
+        border: 1px solid black;
+        color: #000;
     }
 
     /* 
@@ -678,6 +683,7 @@ div .diary-container {
     }
 
     .upload {
+        font-size: 14px;
         width: 200px;
         height: 200px;
         background-color: antiquewhite;
