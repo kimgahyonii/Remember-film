@@ -122,6 +122,7 @@ nav {
     align-items: center;
     height: 100vh;
     scroll-margin-top: 80px;
+    /* text-shadow: 2px 2px 20px rgba(0, 0, 0, 2); */
 }
 
 .secondPage-text {
@@ -234,7 +235,7 @@ i {
 
 /* 미디어 쿼리문으로 텍스트 크기 조정(반응형 구현하기) */
 @media (max-width: 600px) {
-    .bi {
+    button .bi {
         color: black;
     }
 
