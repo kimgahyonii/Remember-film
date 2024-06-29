@@ -234,6 +234,10 @@ i {
 
 /* 미디어 쿼리문으로 텍스트 크기 조정(반응형 구현하기) */
 @media (max-width: 600px) {
+    .bi {
+        color: black;
+    }
+
     .image-upload {
         position: relative;
     }
