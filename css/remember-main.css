@@ -148,7 +148,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: hsla(0, 0%, 85%, 1);
     /* 텍스트 색상 설정 */
     text-align: center;
     /* 텍스트 가운데 정렬 */
