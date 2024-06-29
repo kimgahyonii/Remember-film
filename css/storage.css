@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+main {
+    position: fixed;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+.slideshow-container {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.slide-container {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 200px;
+    text-align: center;
+}
+
+/* 
+.slide img {
+    
+    height: auto;
+    transition: transform 0.5s ease;
+    margin-bottom: 20px;
+} */
+
+.slider {
+    margin-top: 20px;
+    width: 100%;
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#image1 {
+    /* margin-left: 500px; */
+}
+
+.slideshow-container {
+
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    transition: transform 0.5s ease;
+    /* align-items: center; */
+    /* position: relative; */
+}
+
+.slide {
+
+    margin-top: 20px;
+    flex: 0 0 200px;
+    /* margin-right: 10px; */
+    text-align: center;
+}
+
+.slide img {
+    /* z-index: 2; */
+    /* width: 100%; */
+    width: 500px;
+    height: auto;
+    transition: transform 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.slider {
+    width: 100%;
+    max-width: 600px;
+    /* bottom: -30px; */
+    /* left: 200px; */
+    /* position: absolute; */
+    position: absolute;
+    /* 절대 위치 설정 */
+    /* bottom: 10px; */
+    /* 이미지 아래로의 거리 */
+    left: 50%;
+    /* 가운데 정렬을 위해 50% 위치 설정 */
+    transform: translateX(-50%);
+    /* 가운데 정렬을 위해 위치 조정 */
+    width: 600px;
+    /* 슬라이더 너비 설정 */
+    max-width: 100%;
+    /* 최대 너비 설정 */
+    z-index: 1;
+}
+
+.slide img {
+    position: relative;
+    /* 이미지 위치 설정을 위해 상대적 위치 설정 */
+    z-index: 0;
+    /* 기본적으로 이미지는 슬라이더보다 아래에 위치 */
+}
+
+@media screen and (max-width:600px) {
+
+    .slider {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .title {
+        /* margin-top: 90px; */
+        text-align: center;
+        /* padding: 200px; */
+        /* background-color: #f0f0f0; */
+    }
+
+    .slideshow-container {
+        display: flex;
+        justify-content: center;
+        /* 수평 가운데 정렬 */
+        overflow-y: auto;
+        /* 세로 스크롤 가능하도록 */
+        max-height: calc(100vh - 100px);
+        /* 최대 높이 지정 (화면 높이의 100%에서 제목의 높이와 패딩을 제외한 값) */
+        /* margin-top: 20px; */
+        /* 슬라이드 컨테이너와 제목 사이의 간격 조절 */
+    }
+
+    .slide-container {
+
+        display: flex;
+        flex-direction: column;
+        /* 세로로 배치 */
+        align-items: center;
+        /* 수직 가운데 정렬 */
+        width: 100%;
+        /* 최대 너비로 설정 */
+    }
+
+    .slide {
+        margin-left: 10px;
+        /* margin-right: 10px; */
+        /* 슬라이드 간격 조절 */
+        display: block;
+        /* 첫 번째 슬라이드는 보이게 함 */
+        text-align: center;
+        /* 이미지를 가로 방향으로 중앙 정렬 */
+    }
+
+    img {
+        max-width: 100%;
+        /* 이미지 너비 최대값 지정 */
+        height: auto;
+        /* 이미지 높이 자동 조정 */
+    }
+}

@@ -10,6 +10,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     /* font */
     --body-font: 'Noto Sans', sans-serif;
@@ -24,6 +26,28 @@
     --nav-height: 44px
 }
 
+
+div .upload,
+div .diary-container {
+
+    background-color: #fff;
+    /* border-radius: 10px; */
+    box-shadow: inset -10px -10px 35px rgba(0, 0, 0, 0.2);
+    top: 68px;
+    left: 10px;
+    width: 632px;
+    height: 383px;
+    /* background-color: #000; */
+    z-index: 1;
+}
+
+
+/* html{filter: ;} */
+/* html {
+    background: url(/bakcgroundImage.jpg)
+} */
+
+
 .after-button {
     display: none;
 }
@@ -33,10 +57,56 @@ hr {
 }
 
 img {
-    /* margin-top: 6%; */
-    /* height: 30rem; */
+    width: auto;
+}
+
+/* 추가 */
+.input_image_frame {
+    padding: 542px;
+
+}
+
+.film-frame-img img,
+.input_image_frame {
+    /* position: absolute; */
+    /* position: relative; */
+    /* margin-top: 5px; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+#imagePreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* width: 100%; */
-    /* overflow: hidden; */
+    /* height: 100%; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+}
+
+#imagePreview img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+
+.upload {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 /*
@@ -48,9 +118,17 @@ img {
 } */
 .title {
 
+    margin-top: 30px;
     font-family: "Nanum Myeongjo", serif;
     font-weight: 400;
     font-style: normal;
+    /* color: aliceblue; */
+    text-align: center;
+    justify-content: center;
+    /* text-shadow: 10px 10px 20px #fff; */
+    /* text-shadow: 5px 0px white; */
+    font-size: large;
+    margin-bottom: 20px;
 
 }
 
@@ -58,7 +136,7 @@ img {
     flex-direction: column;
     display: flex;
     align-items: center;
-    margin-top: calc(var(--nav-height) + 30px);
+    margin-top: calc(var(--nav-height) + 10px);
     overflow: hidden;
 }
 
@@ -66,17 +144,16 @@ img {
     width: 400rem;
     text-align: center;
     /* width: 100%; */
-    /* padding: 0 100px; */
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
-    /* column-gap: 80px; */
+    /* column-gap: 10px; */
     /* row-gap: 40px; */
 }
 
 .film-frame-img {
-    margin-top: 20px;
-    padding-top: 0%;
+    /* margin-top: 20px; */
+
     position: relative;
     /* Added to position child elements absolutely */
     /* max-width: 100%; */
@@ -88,18 +165,25 @@ img {
     /* flex: 1 0 200px; */
 }
 
+
 button {
-    /* position: relative; */
-    margin-top: 30px;
-    padding: 15px 30px;
+    position: relative;
+    margin-top: 20px;
+    padding: 15px 90px;
     border-radius: 15px;
+    /* border: 20px; */
+
+    border-color: #000;
+    background-color: #fff;
     font-family: var(--body-font);
-    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
+
     /* text-decoration: none; */
     font-weight: 600;
     transition: 0.25s;
+    z-index: 1;
 
 }
+
 
 /* .image-upload-container {
     z-index: 2;
@@ -110,7 +194,7 @@ button {
 } */
 
 .image-upload-text {
-    font-size: var(--normar-font-size);
+    font-size: 20px;
     /* Adjust text size as needed */
     /* position: absolute; */
     /* font-size: var(--normar-font-size);   */
@@ -121,17 +205,21 @@ button {
     /* text-align: left; */
 
     color: hsl(0, 0%, 14%, 0.70);
-    line-height: 1.5;
+    line-height: 1;
+    margin-right: 20px;
     /* 줄간격을 넓히는 속성 추가 */
     /* display: inline; */
 }
+
+.input-image-frame {}
 
 .upload {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+
+    /* position: absolute; */
     /* 부모 요소를 기준으로 절대 위치 */
     top: 0;
     left: 0;
@@ -143,7 +231,7 @@ button {
 }
 
 .upload i {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #A7A7A7;
     /* 아이콘 크기 조정 가능 */
 }
@@ -155,26 +243,12 @@ button {
 <div class="diary-write-text">write</div>
 <div class="input-box"></div>
 </div> */
-.diary-title {
-    /* margin-left: 180px; */
-    font-size: 20px;
-}
-
-.diary-title,
-.input-box,
-hr {
-    margin-bottom: 10px;
-}
-
-.diary-write-text {
-    margin-bottom: 10px;
-}
-
-.diary-container .diary-input-title {
-    justify-content: left;
-}
-
 .diary-container {
+    width: 500px;
+    /* Adjust the width as needed */
+    margin: 0 auto;
+
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -193,29 +267,373 @@ hr {
 }
 
 
-/* 반응형 */
-@media screen and(max-width:978px) {
-    #film-frame {
-        margin-top: calc(var(--nav-height) + 60px);
-    }
+.diary-title {
+    font-size: 24px;
+    /* font-weight: bold; */
+    text-align: center;
+    /* margin-top: 1px; */
+}
 
-    .film-frame-container {
-        min-width: 100%;
-    }
+.diary-input-title {
+    /* margin-top: 5px; */
+    text-align: left;
+    /* Aligns child elements to the left */
+}
 
-    img {
-        max-width: 250px;
-        margin: 0 auto;
-    }
+.title-text {
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+}
+
+.title-hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 0;
+}
+
+.diary-container>.diary-write-text {
+    /* text-align: left; */
+    /* margin-top: 20px; */
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+/* input { */
+
+/* } */
+input {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 25px;
+}
+
+textarea {
+    border: 1px solid;
+    width: 100%;
+    height: 175px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    /* 사용자가 크기를 조절하지 못하게 함 */
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.diary-write-text {
+    /* margin: 0; */
+    /* Reset margin */
+    /* padding: 0; */
+    text-align: left;
+    /* justify-content: left; */
+    /* Aligns the text to the left */
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+    /* white-space: nowrap; */
+    /* Adjust the margin as needed */
+    /* font-weight: bold; */
+}
+
+#main-frame1,
+#main-frame2 {
+    /* width: auto; */
+    width: 650px;
+    /* box-shadow: 40px 30px 35px rgba(0, 0, 0, 0.2); */
+}
+
+
+/* 
+#main-frame2 {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
+} */
+input {
+    height: 25px;
+    width: 350px;
+}
+
+.main-frame-conatiner {
+
+    /* box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5); */
+    z-index: 1;
+}
+
+#sub-frame1,
+#sub-frame2 {
+    /* left: 10px; */
+    width: 500px;
+    margin-top: 47px;
+}
+
+
+
+.before-button {
+    font-family: "Noto Sans", sans-serif;
+    /* font-optical-sizing: unset; */
+    /* padding: 10px; */
+    font-size: 17px;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.title-container {
+    background-color: rgba(240, 248, 255, 0.445);
+    width: 1200px;
+}
+
+button:hover {
+    background: #fff;
+    opacity: 1;
+}
+
+.before-button {
+    background-color: #efefefab;
+    border: 1.5px solid;
+}
+
+.before-button .bi {
+    margin-right: 7px;
+}
+
+.bi {
+    color: #555;
 }
 
 @media screen and (max-width:600px) {
+
+
+    .after-button {
+        display: flex;
+        /* align-items: center; */
+        /* background-color: #fff; */
+        /* border-radius: 10px; */
+        /* border: 1.5px solid #000; */
+        padding: 10px 20px;
+
+        /* font-family: var(--body-font); */
+        /* font-size: 5px; */
+        /* font-weight: 200; */
+        /* font-size: small; */
+        /* color: #000; */
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    .after-button .bi {
+        margin-right: 7px;
+        /* 아이콘과 텍스트 사이 간격 조정 */
+        font-size: 1.5em;
+        /* 아이콘 크기 조정 */
+        color: #000;
+        /* 아이콘 색상 설정 */
+    }
+
+    .film-frame-img {
+        /* width: 80%; */
+        /* 모바일 환경에서 너비를 줄임 */
+        height: 40%;
+        /* 모바일 환경에서 높이를 줄임 */
+        margin-top: 2px;
+        /* 모바일 환경에서 윗부분 여백 값을 줄임 */
+
+
+    }
+
+    div .after-button {
+        font-family: "Noto Sans", sans-serif;
+        /* font-optical-sizing: unset; */
+        /* padding: 10px; */
+        font-size: 15px;
+        font-weight: 200;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+    }
+
+    /* 
+div .upload,
+div .diary-container {
+
+    background-color: #fff;
+
+    
+    top: 68px;
+    left: 10px;
+    width: 632px;
+    height: 383px;
+
+    z-index: 1;
+*/
+
+    /* .diary-container { */
+    /* padding: 1px; */
+    /* } */
+    div .upload {
+        /* position: absolute; */
+        /* Ensure it's positioned above other elements */
+        /* top: 10px; */
+        /* Adjust top position as needed */
+        /* left: 10px; */
+        /* Adjust left position as needed */
+        /* width: 291px; */
+        /* height: 177px; */
+        /* background-color: antiquewhite; */
+        /* Adjust background color if necessary */
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* z-index: 2; */
+    }
+
+    hr,
+    .diary-write-text {
+        display: none;
+    }
+
+
+    div .upload,
+    div .diary-container {
+        /* background-color: green; */
+        top: 31px;
+        box-shadow: inset -5px -5px 20px rgba(0, 0, 0, 0.1);
+        left: 8px;
+        width: 287px;
+        height: 177px;
+    }
+
+    /* 
+    #main-frame1,
+    #main-frame2 {
+        width: 650px;
+        box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.2);
+    } */
+    #main-frame1,
+    #main-frame2 {
+        width: 100%;
+        /* 부모 컨테이너의 너비를 100%로 설정 */
+        max-width: 650px;
+        /* 최대 너비를 650px로 설정 */
+        margin: 0 auto;
+        /* 양옆 여백을 자동으로 설정하여 중앙 정렬 */
+        padding: 0;
+        /* 내부 여백을 0으로 설정 */
+        /* box-shadow: 15px 20px 35px rgba(0, 0, 0, 0.2); */
+        /* 기존 그림자 유지 */
+    }
+
+
+    .film-frame-img {
+        /* width: 80%; */
+        /* 모바일 환경에서 너비를 줄임 */
+        /* height: 40/%; */
+        /* 모바일 환경에서 높이를 줄임 */
+        margin-top: 20px;
+        /* height: 80px; */
+        /* 모바일 환경에서 윗부분 여백 값을 줄임 */
+
+
+        /* 윗부분 여백을 줄임 */
+    }
+
+    .film-frame-container {
+        /* background-color: blue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* 부모 컨테이너의 너비를 유지 */
+    }
+
+    .main-frame {
+        /* background-color: pink; */
+        margin-top: 100px;
+    }
+
+    .diary-title {
+        /* margin-top: 60px; */
+        /* writing-mode: vertical-rl; */
+        /* 텍스트를 세로로 쓰기 */
+        /* text-orientation: upright; */
+        /* 텍스트 방향을 혼합으로 설정 */
+
+
+        white-space: nowrap;
+        /* 텍스트가 줄바꿈 되지 않도록 설정 */
+        transform: rotate(360deg);
+        /* 텍스트를 180도 회전하여 정방향으로 설정 */
+        /* transform-origin: top/ right; */
+        /* 회전 기준점 설정 */
+        margin-right: 30px;
+        /* 다른 요소와의 간격을 주기 위한 마진 설정 */
+    }
+
+
+    input {
+
+        width: 200px;
+
+    }
+
+    .title-hr {
+        width: 250px;
+    }
+
+    div.title {
+        margin-top: 50px;
+        /* margin-left: 50px; */
+        /* margin-left: 20px; */
+    }
+
+    p .title-text {
+        /* margin-left: 20px; */
+    }
+
+    .input {
+
+        width: 80px;
+    }
+
     button {
-        margin-top: 3px;
+        margin-top: 6px;
     }
 
     .after-button {
+        /* margin-top: 20px; */
+    }
+
+    /* .after-button .bi { */
+    /* margin-right: 7px; */
+    /* } */
+
+    .after-button {
+
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1.5px solid;
+        /* height: 10px; */
+        /* width: 26px; */
         display: block;
+        margin-top: 17px;
+        flex-direction: row;
+        font-family: "Noto Sans", sans-serif;
+        /* font-optical-sizing: unset; */
+        font-size: 17px;
+        font-weight: 200;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
     }
 
     .before-button,
@@ -223,25 +641,33 @@ hr {
         display: none;
     }
 
-    #film-frame {
+    /* #film-frame {
         margin-top: calc(var(--nav-height) + 50px);
-    }
+    } */
 
     .film-frame-container {
         flex-direction: column;
         align-items: center;
-        row-gap: 20px;
+
+        /* column-gap: 20px; */
     }
 
+    /* .button-container {} */
+
     .film-frame-img {
-        min-width: 100%;
+        /* min-width: 100%; */
+        /* margin-top: 20px; */
+        /* width: 80%; */
+        /* align-items: center; */
+
     }
 
     img {
+
         display: flex;
         flex-wrap: wrap;
-        justify-content: spacee-between;
-        max-width: 250px;
+        /* justify-content/: spacee-between; */
+        max-width: 300px;
         margin: 0 auto;
     }
 
@@ -257,20 +683,41 @@ hr {
 
     .input-box {
         /* height: 10px; */
-        width: 20px;
+        width: 17px;
+
         /* align-items: center; */
         /* justify-content: centers; */
     }
 
-    /* .image-upload-text {
-
-        color: black;
+    .diary-title {
+        font-size: 18px;
+        justify-content: left;
     }
 
-    .image-upload-container {
-        z-index: 2;
-        left: 50%;
-        top: 50%;
+    input {
+        padding: 3px;
+    }
 
-    } */
+    .diary-input-title {
+
+        font-size: 15px;
+        margin: 1px;
+        /* 텍스트 크기를 줄임 */
+    }
+
+    textarea {
+        width: 250px;
+        height: 100px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        resize: none;
+        /* 사용자가 크기를 조절하지 못하게 함 */
+        font-family: "Nanum Myeongjo", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
 }
+
+@media (max-width: 768px) {}

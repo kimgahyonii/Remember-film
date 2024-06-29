@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            /* Remove or comment out if not needed */
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .current {
+            opacity: 1;
+        }
+
+        #scrollSection1 {
+            background-color: #f0f0f0;
+            background-image: url('mainImage2-2.jpg');
+            background-size: cover;
+            color: #333;
+        }
+
+        #scrollSection2 {
+            background-color: #c0c0c0;
+            background-image: url('mainImage2-10.jpg');
+            background-size: cover;
+            color: #333;
+        }
+
+        #scrollSection3 {
+            background-color: #a0a0a0;
+            background-image: url('mainImage2-2.jpg');
+            background-size: cover;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="scrollSection1" class="section current">
+        <div class="scrollSection toStorage-image">
+            <div class="toStorage-text">우리의 추억, <br>그때의 기억</div>
+            <div class="toStorage-button"><a href="/make-photo.html"><button>들어가기 <i
+                            class="bi bi-arrow-right-short"></i></button></a></div>
+        </div>
+    </section>
+    <section id="scrollSection2" class="section">
+        <div class="scrollSection main-secondPage-img">
+            <div class="secondPage-text">아날로그 감성을 좋아하는 이들에게, </div>
+            <div class="secondPage-text">낡고 어린 추억을 담는 필름 사진관 </div>
+            <div class="secondPage-text point">Remember film 입니다.</div>
+        </div>
+    </section>
+    <section id="scrollSection3" class="section">
+        <div class="scrollSection scroll-thirdPage-container">
+            <div class="thirdPage-text">여러분의 소중한 추억을 필름 속에 담아보세요</div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            var page = 1;
+            var $html = $('html, body');
+            var windowHeight = $(window).height();
+            var sections = $('.section');
+
+            // Initial setup
+            updateCurrentSection();
+
+            // Smooth scroll on mouse wheel
+            $(window).on('wheel', function (e) {
+                e.preventDefault(); // Prevent default scrolling
+                if (isScrolling()) return;
+                if (e.originalEvent.deltaY > 0) {
+                    if (page < sections.length) page++;
+                } else {
+                    if (page > 1) page--;
+                }
+                scrollToSection(page);
+            });
+
+            // Smooth scroll on section click
+            $('.section').on('click', function () {
+                var index = $(this).index();
+                scrollToSection(index + 1);
+            });
+
+            // Navigate sections using arrow keys
+            $(document).on('keydown', function (e) {
+                if (isScrolling()) return;
+                if (e.which === 38) { // Up arrow key
+                    if (page > 1) page--;
+                } else if (e.which === 40) { // Down arrow key
+                    if (page < sections.length) page++;
+                }
+                scrollToSection(page);
+            });
+
+            // Update current section based on scroll position
+            $(window).on('scroll', function () {
+                if (isScrolling()) return;
+                sections.each(function (index, section) {
+                    var offset = $(section).offset().top;
+                    var scrollPosition = $(window).scrollTop();
+
+                    if (scrollPosition >= offset - windowHeight / 2) {
+                        page = index + 1;
+                    }
+                });
+                updateCurrentSection();
+            });
+
+            // Function to scroll to a specific section
+            function scrollToSection(index) {
+                var offset = sections.eq(index - 1).offset().top;
+                $html.animate({
+                    scrollTop: offset
+                }, 500);
+                page = index;
+                updateCurrentSection();
+            }
+
+            // Function to update the current section class
+            function updateCurrentSection() {
+                sections.removeClass('current');
+                sections.eq(page - 1).addClass('current');
+            }
+
+            // Function to check if scrolling animation is in progress
+            function isScrolling() {
+                return $html.is(':animated');
+            }
+        });
+    </script>
+</body>
+
+</html>

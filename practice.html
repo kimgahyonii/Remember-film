@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORAGE</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/storage.css">
+    <style>
+        /* Reset unnecessary styles and adjust as needed */
+        .slide-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .slide {
+            width: calc(50% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+            margin-bottom: 20px;
+            display: block;
+            /* Ensure images behave as block-level elements */
+            margin: 0 auto;
+            /* Center align images horizontally */
+        }
+
+        /* Media query for responsiveness */
+        @media (max-width: 600px) {
+            .title {
+                margin-top: 200px;
+            }
+
+            .slide-container {
+                justify-content: flex-start;
+                padding-left: 10px;
+                padding-right: 10px;
+                overflow-x: auto;
+                display: flex;
+                align-items: center;
+                /* Center align items vertically */
+                height: 100vh;
+                /* Full viewport height */
+            }
+
+            .slide {
+                width: calc(100% - 20px);
+                display: flex;
+                justify-content: center;
+                /* Center align horizontally */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav container">
+            <ul class="qureytitle">Remember Film</ul>
+            <ul class="nav-list container">
+                <li class="nav-item"><a href="/index.html" class="nav-link">HOME</a></li>
+                <li class="nav-item"><a href="/make-photo.html" class="nav-link">MAKE PHOTO</a></li>
+                <li class="nav-item"><a href="/storage.html" class="nav-link">STORAGE</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title">나만의 필름 스토리를 감상해보세요.</div>
+        <div class="slideshow-container">
+            <div class="slide-container">
+                <div class="slide">
+                    <img src="FilmFrame_edited_edited.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="FilmFrame_edited_edited.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="FilmFrame_edited_edited.jpg" alt="Image 3">
+                </div>
+                <div class="slide">
+                    <img src="FilmFrame_edited_edited.jpg" alt="Image 4">
+                </div>
+                <div class="slide">
+                    <img src="FilmFrame_edited_edited.jpg" alt="Image 5">
+                </div>
+                <div class="slide">
+                    <img src="FilmFrame_edited_edited.jpg" alt="Image 6">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="/js/nav.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slideContainer = document.querySelector(".slide-container");
+            const firstSlide = document.querySelector(".slide");
+
+            // Function to vertically center the first slide
+            function centerFirstSlide() {
+                const containerHeight = slideContainer.clientHeight;
+                const firstSlideHeight = firstSlide.clientHeight;
+                const marginTop = (containerHeight - firstSlideHeight) / 2;
+                firstSlide.style.marginTop = marginTop + "px";
+            }
+
+            // Call the function initially and on window resize
+            centerFirstSlide();
+            window.addEventListener("resize", centerFirstSlide);
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 스크롤 구현 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember film</title>
+    <!-- 스크롤 구현시 필요한 jquery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="/css/remember-main.css"> -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            /* Remove or comment out if not needed */
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            /* opacity: 0; */
+            transition: opacity 0.5s ease;
+        }
+
+        .current {
+            opacity: 1;
+        }
+
+        #section1 {
+            background-color: #f0f0f0;
+            background-image: url('toStorage-image.jpg');
+            background-size: cover;
+            color: #333;
+        }
+
+        #section2 {
+            background-color: #c0c0c0;
+            background-image: url('mainImage2.jpg');
+            background-size: cover;
+            color: #333;
+        }
+
+        .section3 {
+            /* background-color: #a0a0a0; */
+            height: 836px;
+            background: url('mainImage2-10.jpg') no-repeat center center;
+            background-size: cover;
+            /* color: #333;
+             */
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav container">
+            <!-- 데스크탑, 태블릿 : 메뉴 바 만들기 -->
+            <ul class="qureytitle"><a href="/index.html">Remember Film</a></ul>
+            <ul class="nav-list container">
+                <li class="nav-item"><a href="/index.html" class="nav-link"">HOME</a></li>
+                <li class=" nav-item"><a href="/make-photo.html" class="nav-link"">MAKE PHOTO</a>
+                </li>
+                <li class=" nav-item"><a href="/storage.html" class="nav-link">STORAGE</a></li>
+            </ul>
+            <!-- 모바일 : 햄버거(반응형 toggle) -->
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </nav>
+    </header>
+    <main id="remember-main" class="container">
+        <section class="ScrollSection">
+            <div id="section1" class="section current">
+                <!-- <img src="toStorage-image.jpg" alt="image" class="toStorage-image"> -->
+                <div class="toStorage-text">우리의 추억, <br>그때의 기억</div>
+                <!-- <div class="toStorage-text coment">여러분의 소중한 추억을 필름으로 기억해 보실까요?</div> -->
+                <div class="toStorage-button"><a href="/make-photo.html"><button>들어가기 <i
+                                class="bi bi-arrow-right-short"></i></button></a></div>
+            </div>
+        </section>
+        <section class="ScrollSection">
+            <div id="section2" class="section">
+                <div class="secondPage-text">아날로그 감성을 좋아하는 이들에게, </div>
+                <div class="secondPage-text">낡고 어린 추억을 담는 필름 사진관 </div>
+                <div class="secondPage-text point">Remembr film 입니다.</div>
+                <!-- <img src="mainImage2.jpg" alt=""> -->
+            </div>
+        </section>
+        <sesction class="ScrollSection">
+            <div id="section3" class="section section3">
+                <div class="thirdPage-text">여러분의 소중한 추억을 필름 속에 담아보세요</div>
+                <!-- <div class="thirdPage-text">- Remember film</div> -->
+            </div>
+        </sesction>
+    </main>
+    <script src="js/nav.js"></script>
+    <script src="js/remember-main.js"></script>
+</body>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function () {
+        var page = 1;
+        var $html = $('html, body');
+        var windowHeight = $(window).height();
+        var sections = $('.section');
+
+        // Initial setup
+        updateCurrentSection();
+
+        // Smooth scroll on mouse wheel
+        $(window).on('wheel', function (e) {
+            e.preventDefault(); // Prevent default scrolling
+            if (isScrolling()) return;
+            if (e.originalEvent.deltaY > 0) {
+                if (page < sections.length) page++;
+            } else {
+                if (page > 1) page--;
+            }
+            scrollToSection(page);
+        });
+
+        // Smooth scroll on section click
+        $('.section').on('click', function () {
+            var index = $(this).index();
+            scrollToSection(index + 1);
+        });
+
+        // Navigate sections using arrow keys
+        $(document).on('keydown', function (e) {
+            if (isScrolling()) return;
+            if (e.which === 38) { // Up arrow key
+                if (page > 1) page--;
+            } else if (e.which === 40) { // Down arrow key
+                if (page < sections.length) page++;
+            }
+            scrollToSection(page);
+        });
+
+        // Update current section based on scroll position
+        $(window).on('scroll', function () {
+            if (isScrolling()) return;
+            sections.each(function (index, section) {
+                var offset = $(section).offset().top;
+                var scrollPosition = $(window).scrollTop();
+
+                if (scrollPosition >= offset - windowHeight / 2) {
+                    page = index + 1;
+                }
+            });
+            updateCurrentSection();
+        });
+
+        // Function to scroll to a specific section
+        function scrollToSection(index) {
+            var offset = sections.eq(index - 1).offset().top;
+            $html.animate({
+                scrollTop: offset
+            }, 500);
+            page = index;
+            updateCurrentSection();
+        }
+
+        // Function to update the current section class
+        function updateCurrentSection() {
+            sections.removeClass('current');
+            sections.eq(page - 1).addClass('current');
+        }
+
+        // Function to check if scrolling animation is in progress
+        function isScrolling() {
+            return $html.is(':animated');
+        }
+    });
+</script>
+
+</html>

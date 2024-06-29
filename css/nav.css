@@ -12,12 +12,11 @@
     /* --secondary-color: hsl(339, 77%, 59%); */
     /* --third-color: hsl(0, 0%, 85%); */
 
-    --body-color: hsla(0, 0%, 100%, 0.98);
+    /* --body-color: hsl(0, 0%, 100%); */
 
     /* font */
     --body-font: 'Noto Sans', sans-serif;
     --h1-font-size: 2rem;
-    /* 글자 크기 : 중간일 때, 대문자 M의 너비인 16px을 기준으로 함*/
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normar-font-size: 1rem;
@@ -81,6 +80,7 @@ nav a {
 
 
 .nav-list {
+
     display: flex;
     /* align-items: center; */
     column-gap: 50px;
@@ -96,6 +96,7 @@ nav a {
 .nav-toggle,
 .logo {
     display: none;
+    /* color: aliceblue; */
     /*list 표시 정렬*/
     /* position: absolute; */
     /* right: 30px; */
@@ -134,6 +135,13 @@ nav a {
     /* // <weight>: Use a value from 200 to 700 */
 
 
+    /* .nav-toggle { */
+    /* display: none; */
+    /* color: aliceblue; */
+    /*list 표시 정렬*/
+    /* position: absolute; */
+    /* right: 30px; */
+    /* } */
 
     .nav-container {
         padding: 0 20%;
@@ -176,11 +184,16 @@ nav a {
         /* padding: 1rem; */
     }
 
+    .bi {
+        color: aliceblue;
+    }
+
     .nav-toggle {
         display: block;
         cursor: pointer;
         position: absolute;
         right: 3%;
+        /* color: aliceblue; */
     }
 
     .show-menu {

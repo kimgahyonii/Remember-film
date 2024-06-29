@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
 :root {
     --primary-color: hsla(0, 0%, 14%, 0.70);
@@ -26,14 +27,147 @@
     --nav-height: 44px
 }
 
-.toStrorage-container {
-    height: 836px;
+/* 스크롤 이벤트는 없음 */
+html {
+    scroll-behavior: smooth;
+
+    /* scroll-behavior: smooth; */
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+
+    /* 생략 */
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* font-size: 3em; */
+    /* opacity: 0; */
+    transition: opacity 0.5s ease;
+
+    background-color: transparent;
+    /* 배경색이 투명이 아니면 흰색으로 보일 수 있음 */
+
+
+
+}
+
+.secondPage-text,
+.thirdPage-text {
+    font-size: larger;
+    margin-top: 30px;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: bold;
+    font-style: normal;
+    /* color: aliceblue; */
+    text-align: center;
+    justify-content: center;
+    /* text-shadow: 10px 10px 20px #fff; */
+    /* text-shadow: 5px 0px white; */
+    font-size: large;
+    margin-bottom: 20px;
+
+}
+
+/* 섹션의 경계 */
+
+.current {
+    opacity: 1;
+}
+
+/* 
+.toStrorage-container,
+.scroll-secondPage-container,
+.scroll-thirdPage-container {
+    background-size: cover;
+    background-position: center;
+} */
+
+#scrollSection1 {
+    /* height: 836px; */
     background: url(/toStorage-image.jpg) no-repeat center center;
     background-size: cover;
     /* 꽉찬 화면을 반응형으로 기준점을 center로 */
     background-position: cover;
     /* column-gap: 200px; */
     /* width: 100%; */
+}
+
+
+.secondPage-text,
+.thirdPage-text {
+    text-align: center;
+
+
+}
+
+.scroll-secondPage-container,
+.scroll-thirdPage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    scroll-margin-top: 80px;
+}
+
+.secondPage-text {
+    color: aliceblue;
+
+}
+
+.point {
+    font-size: large;
+
+}
+
+
+.current {
+    opacity: 1;
+}
+
+#scrollSection2,
+#scrollSection3 {
+    height: 100vh;
+    background: url(/mainImage2.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    /* 텍스트 색상 설정 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    position: relative;
+    /* 포지션 설정 */
+}
+
+.thirdPage-text {
+    color: aliceblue;
+    /* text-align: center; */
+    /* justify-content: center; */
+    /* display: flex; */
+}
+
+#scrollSection3 {
+    height: 836px;
+    background: url(/mainImage2-10.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    /* background-size: cover; */
 }
 
 /* br { */
@@ -43,6 +177,7 @@
 body {
     font-family: var(--body-font);
     /* background-color: var(--body-color); */
+    /* overflow: hidden; */
 }
 
 body>header {
@@ -52,14 +187,6 @@ body>header {
     left: 0;
 }
 
-
-.toStorage-image {
-    /* width: 100%; */
-    /* height: 600px; */
-    /* padding-top: 200%; */
-    /* background-size: cover; */
-    /* position: left; */
-}
 
 button {
     /* position: relative; */
@@ -74,16 +201,34 @@ button {
     /* color: hsla(0, 0%, 80%, 0.98); */
     background-color: hsla(0, 0%, 80%, 1);
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* background-color: none; */
+    cursor: pointer;
     font-weight: 600;
     transition: 0.25s;
     box-shadow: 3px 4px hsla(0, 0%, 12%, 0.3);
+    outline: none;
 
+}
+
+button:hover {
+    background-color: hsla(0, 0%, 85%, 1);
+    /* 호버 시 색상 밝아짐 */
+    box-shadow: 3px 4px hsla(0, 0%, 12%, 0.5);
+    /* 그림자 효과 강화 */
+    transform: scale(1.05);
+    /* 호버 시 사이즈 살짝 커지도록 */
 }
 
 i {
     font-size: large;
 }
+
+/* .scroll-section {
+    transition: background-color 0.3s ease-in-out;
+} */
 
 /* 버튼 css */
 
@@ -110,9 +255,6 @@ i {
         /* Adjust icon size as needed */
     }
 
-    /* .toStorage-text{ */
-    /*  */
-    /* } */
 
     .toStorage-image {
 
