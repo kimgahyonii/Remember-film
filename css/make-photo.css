@@ -282,6 +282,7 @@ button {
 }
 
 .title-text {
+    font-family: "Nanum Myeongjo", serif;
     margin: 0;
     /* Reset margin */
     padding: 0;
@@ -324,7 +325,7 @@ textarea {
     resize: none;
     outline: none;
     /* 사용자가 크기를 조절하지 못하게 함 */
-    font-family: "Nanum Myeongjo", serif;
+    /* font-family: "Nanum Myeongjo", serif; */
     font-weight: 400;
     font-style: normal;
 }
@@ -412,6 +413,10 @@ button:hover {
 }
 
 @media screen and (max-width:600px) {
+    div .title {
+        margin-bottom: 0;
+    }
+
     .image-upload-text {
         font-size: 14px;
     }
