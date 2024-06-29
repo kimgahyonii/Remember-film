@@ -246,6 +246,7 @@ button {
     width: 500px;
     /* Adjust the width as needed */
     margin: 0 auto;
+    font-family: "Nanum Myeongjo", serif;
 
     width: 500px;
     display: flex;
@@ -592,6 +593,7 @@ div .diary-container {
 
     div.title {
         margin-top: 10px;
+        margin-bottom: 0;
         /* margin-left: 50px; */
         /* margin-left: 20px; */
     }
