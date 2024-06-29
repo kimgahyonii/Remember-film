@@ -127,6 +127,10 @@ body {
 }
 
 @media screen and (max-width:600px) {
+    #image1 {
+        margin-top: 1100px;
+    }
+
     .slider {
         display: none;
     }
@@ -151,6 +155,7 @@ body {
         overflow-y: auto;
         /* 세로 스크롤 가능하도록 */
         max-height: calc(100vh - 100px);
+        bottom: 20px;
         /* 최대 높이 지정 (화면 높이의 100%에서 제목의 높이와 패딩을 제외한 값) */
         /* margin-top: 20px; */
         /* 슬라이드 컨테이너와 제목 사이의 간격 조절 */
