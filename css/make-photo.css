@@ -117,7 +117,6 @@ img {
     margin-top: 3%;
 } */
 .title {
-
     margin-top: 30px;
     font-family: "Nanum Myeongjo", serif;
     font-weight: 400;
@@ -169,7 +168,7 @@ img {
 button {
     position: relative;
     margin-top: 20px;
-    padding: 15px 90px;
+    padding: 7px 80px;
     border-radius: 15px;
     /* border: 20px; */
 
@@ -268,6 +267,7 @@ button {
 
 
 .diary-title {
+    font-family: "Nanum Myeongjo", serif;
     font-size: 24px;
     /* font-weight: bold; */
     text-align: center;
@@ -433,7 +433,7 @@ button:hover {
     .after-button .bi {
         margin-right: 7px;
         /* 아이콘과 텍스트 사이 간격 조정 */
-        font-size: 1.5em;
+        font-size: 1rem;
         /* 아이콘 크기 조정 */
         color: #000;
         /* 아이콘 색상 설정 */
@@ -591,7 +591,7 @@ div .diary-container {
     }
 
     div.title {
-        margin-top: 50px;
+        margin-top: 10px;
         /* margin-left: 50px; */
         /* margin-left: 20px; */
     }
